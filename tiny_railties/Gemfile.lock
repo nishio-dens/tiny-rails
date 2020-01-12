@@ -1,12 +1,7 @@
 PATH
   remote: .
   specs:
-    tiny_actionpack (0.1.0)
-    tiny_rails (0.1.0)
-      tiny_actionpack (= 0.1.0)
-      tiny_railties (= 0.1.0)
     tiny_railties (0.1.0)
-      tiny_actionpack (= 0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -33,7 +28,7 @@ PLATFORMS
 DEPENDENCIES
   rake (~> 12.0)
   rspec (~> 3.0)
-  tiny_rails!
+  tiny_railties!
 
 BUNDLED WITH
    2.1.2

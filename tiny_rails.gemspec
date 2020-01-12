@@ -1,8 +1,8 @@
-require_relative 'lib/tiny_rails/version'
+version =  File.read(File.expand_path("TINY_RAILS_VERSION", __dir__)).strip
 
 Gem::Specification.new do |spec|
   spec.name          = "tiny_rails"
-  spec.version       = TinyRails::VERSION
+  spec.version       = version
   spec.authors       = ["Shinsuke Nishio"]
   spec.email         = ["nishio@densan-labs.net"]
 
@@ -16,12 +16,10 @@ Gem::Specification.new do |spec|
   # spec.metadata["source_code_uri"] = ""
   # spec.metadata["changelog_uri"] = ""
 
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
-    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "tiny_railties"  , version
+  spec.add_dependency "tiny_actionpack", version
 end

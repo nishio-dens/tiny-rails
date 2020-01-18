@@ -1,0 +1,116 @@
+AllCops:
+  Exclude:
+    - "vendor/**/*"
+    - "db/**/*"
+    - "log/**/*"
+    - "bin/**/*"
+    - ".git/**/*"
+    - "tmp/**/*"
+    - "public/**/*"
+  DisplayCopNames: true
+
+# Use &&/|| instead of and/or.
+Style/AndOr:
+  Enabled: false
+
+# Use only ascii symbols in identifiers.
+Style/AsciiComments:
+  Enabled: false
+
+# Document classes and non-namespace modules.
+Style/Documentation:
+  Enabled: false
+
+# Favor modifier if/unless usage when you have a single-line body.
+Style/IfUnlessModifier:
+  Enabled: false
+
+# Use the lambda method for multi-line lambdas.
+Style/Lambda:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+# Don't use self where it's not needed.
+Style/RedundantSelf:
+  Enabled: false
+
+# Checks for proper usage of fail and raise.
+Style/SignalException:
+  Enabled: false
+
+# Prefer ' strings when you don't need string interpolation or special symbols.
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+
+# Avoid the use of attr. Use attr_reader and attr_accessor instead.
+Style/Attr:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Lint/UnusedBlockArgument:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Layout/MultilineOperationIndentation:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 30
+
+Style/SymbolProc:
+  Severity: warning
+  AutoCorrect: false
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: context_dependent
+
+Naming/PredicateName:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Style/RescueStandardError:
+  Enabled: false
+
+Security/YAMLLoad:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/EmptyCaseCondition:
+  Enabled: false
+
+Style/MultipleComparison:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false

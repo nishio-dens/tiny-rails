@@ -1,5 +1,7 @@
+require "tiny_rails/railtie"
+
 module TinyRails
-  class Engine
+  class Engine < Railtie
     # Rackから呼び出される
     def call(env)
       app.call(env)

@@ -1,4 +1,4 @@
-version =  File.read(File.expand_path("TINY_RAILS_VERSION", __dir__)).strip
+version = File.read(File.expand_path("TINY_RAILS_VERSION", __dir__)).strip
 
 Gem::Specification.new do |spec|
   spec.name          = "tiny_rails"
@@ -20,6 +20,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "tiny_railties"  , version
+  spec.add_dependency "tiny_railties", version
   spec.add_dependency "tiny_actionpack", version
 end

@@ -1,5 +1,3 @@
-require "tiny_actionpack/lib/tiny_action_dispatch/routing/route_set"
-
 module TinyRails
   class Engine
     # Rackから呼び出される

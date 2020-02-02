@@ -3,8 +3,13 @@ module ActionDispatch
     class Mapper
 
       module Resources
-        class Resource
-
+        # ルートを定義する。TinyRailsでは、pathは1つ以上取らないものとする
+        # 以下のように利用する
+        #
+        #   match "path" => "controller#action", via: :patch
+        #   match "path", to: "controller#action", via: :post
+        def match(path, options, &block)
+          map_match([path], options, &block)
         end
 
         # URL '/' で始まるrootを定義する。以下のように利用する
@@ -29,6 +34,23 @@ module ActionDispatch
         private
 
         def match_root_route(options)
+          args = ["/", { as: :root, via: :get }.merge(options)]
+          match(*args)
+        end
+
+        def map_match(paths, options)
+          via = options[:via]
+        end
+
+        def decomposed_match(path, controller, options, _path, to, via)
+          add_route(path, controller, options, _path, to, via)
+        end
+
+        def add_route(action, controller, options, _path, to, via)
+          # TODO
+          mapping = {} # Mapping.build()
+          as = {}
+          @set.add_route(mapping, as)
         end
       end
 
@@ -37,21 +59,15 @@ module ActionDispatch
         # HTTP getを定義する。以下のように利用
         #
         #   get "bacon", to: "food#bacon"
-        def get(*args, &block)
+        def get(path, options, &block)
+          map_method(:get, path, options, &block)
         end
 
         private
 
-        def map_method(method, args, &block)
-          args_last = args.last
-          if args_last.is_a?(Hash)
-            options = args_last
-          else
-            raise ArgumentError
-          end
-
+        def map_method(method, path, options = {}, &block)
           options[:via] = method
-          match(*args, options, &block)
+          match(path, options, &block)
 
           self
         end

@@ -1,12 +1,10 @@
-module ActionDispatch
+module TinyActionDispatch
   module Routing
     class Mapper
 
       module Resources
-        # ルートを定義する。TinyRailsでは、pathは1つ以上取らないものとする
-        # 以下のように利用する
+        # ルートを定義する。TinyRailsでは、以下形式のみ受け付ける
         #
-        #   match "path" => "controller#action", via: :patch
         #   match "path", to: "controller#action", via: :post
         def match(path, options, &block)
           map_match([path], options, &block)

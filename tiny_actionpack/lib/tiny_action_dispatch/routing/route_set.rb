@@ -1,8 +1,11 @@
+require "tiny_action_dispatch/tiny_journey"
+
 module TinyActionDispatch
   module Routing
     class RouteSet
       def initialize(config = {})
         @set = {} # Journey::Routes.new # TODO
+        @router = TinyJourney::Router.new(@set)
       end
 
       def draw(&block)
@@ -10,8 +13,8 @@ module TinyActionDispatch
       end
 
       def call(env)
-        # TODO: 今後実装する、今は何が来てもHelloと返す
-        [200, { "Hello-TinyRails" => "Hello" }, ["Hello TinyRails!"]]
+        req = {} # make_request(env)
+        @router.serve(req)
       end
 
       def add_route(mapping, name)

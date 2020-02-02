@@ -4,7 +4,7 @@ module TinyActionDispatch
   module Routing
     class RouteSet
       def initialize(config = {})
-        @set = {} # Journey::Routes.new # TODO
+        @set    = TinyJourney::Routes.new
         @router = TinyJourney::Router.new(@set)
       end
 

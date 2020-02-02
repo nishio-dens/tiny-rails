@@ -1,3 +1,6 @@
+require "tiny_action_dispatch/tiny_journey/routes"
+require "tiny_action_dispatch/tiny_journey/route"
+
 module TinyActionDispatch
   module TinyJourney
     class Router
